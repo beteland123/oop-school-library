@@ -32,7 +32,7 @@
 
 # 📖 ["OOP school library"] <a name="about-project"></a>
 
-**["OOP school library"]** is a tool to record what books are in the library and who borrows them. The app that you will create will allow you to:
+**["OOP school library"]** is a tool to record what books are in the library and who borrows them. The app will allow to:
 
 Add new students or teachers.
 Add new books.
@@ -62,9 +62,8 @@ And all of this will be built in a beautiful and well-organized way!
 
 ### Key Features <a name="key-features"></a>
 
-- **[Add new students or teachers]**
-- **[Add new books]**
-- **[Save records of who borrowed a given book and when]**
+- **[Add new students or teachers class]**
+- **[Add new person parent class]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
