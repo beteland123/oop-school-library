@@ -11,5 +11,3 @@ class Student < Person
     '¯\\(ツ)/¯'
   end
 end
-student = Student.new(16, 'Math Class', name: 'Alice', parent_permission: true)
-puts student.play_hooky

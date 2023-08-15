@@ -62,6 +62,8 @@ And all of this will be built in a beautiful and well-organized way!
 
 - [] **[Add new students or teachers class]**
 - [] **[Add new person parent class]**
+- [ ] **use the "Decorator" design pattern**
+- [] **[Add new class to captilize and trim name]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -103,9 +105,7 @@ Install this project with:
 To run the project, execute the following command:
 
 ```sh
-  ruby person.rb
-  ruby student.rb
-  ruby teacher.rb
+  ruby main.rb
 ```
 
 ### Run tests
@@ -131,7 +131,6 @@ To run tests, run the following command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **use the "Decorator" design pattern**
 - [ ] **set up associations**
 - [ ] **add basic UI**
 - [ ] **preserve data**
