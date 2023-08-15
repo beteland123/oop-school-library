@@ -14,14 +14,12 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Usage](#usage)
   - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -62,14 +60,8 @@ And all of this will be built in a beautiful and well-organized way!
 
 ### Key Features <a name="key-features"></a>
 
-- **[Add new students or teachers class]**
-- **[Add new person parent class]**
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
-- [Coming Soon...](https://github.com/beteland123/oop-school-library.git)
+- [] **[Add new students or teachers class]**
+- [] **[Add new person parent class]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -79,11 +71,13 @@ To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-In order to run this project you need:
+> You need the following tools be installed in your computer:
 
-Web Browser (Chrome recommended)<br>
-Code editor (VS recommended)<br>
-GitHub account<br>
+> - [Git](https://www.linode.com/docs/guides/how-to-install-git-on-linux-mac-and-windows/)
+> - [Ruby](https://github.com/microverseinc/curriculum-ruby/blob/main/simple-ruby/articles/ruby_installation_instructions.md)
+> - IDE
+> - Etc
+
 
 ### Setup
 
@@ -93,10 +87,34 @@ Clone this repository to your desired folder:
   cd my-folder
   git clone "https://github.com/beteland123/oop-school-library.git"
 ```
-### Deployment
 
-You can deploy this project using:<br>[Coming Soon!!!](https://github.com/beteland123/oop-school-library.git)
+### Install
 
+Install this project with:
+
+```sh
+  cd oop-school-library
+  
+  bundle install
+```
+
+### Usage
+
+To run the project, execute the following command:
+
+```sh
+  ruby person.rb
+  ruby student.rb
+  ruby teacher.rb
+```
+
+### Run tests
+
+To run tests, run the following command:
+
+```sh
+  rspec spec/
+```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 👥 Authors <a name="author"></a>
@@ -113,11 +131,11 @@ You can deploy this project using:<br>[Coming Soon!!!](https://github.com/betela
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[use the "Decorator" design pattern]**
-- [ ] **[set up associations]**
-- [ ] **[add basic UI]**
-- [ ] **[preserve data]**
-- [ ] **[unit tests]**
+- [ ] **use the "Decorator" design pattern**
+- [ ] **set up associations**
+- [ ] **add basic UI**
+- [ ] **preserve data**
+- [ ] **unit tests**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -129,17 +147,23 @@ Feel free to check the [issues page](../../issues/).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+
 ## ⭐️ Show your support <a name="support"></a>
 
-If you like this project, please give me a like, it doesn't cost you anything and it helps me a lot to keep working.
+> Write a message to encourage readers to support your project
+
+If you like this project, please give a ⭐️ (Thank you)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank Bee in Student Success who is always avalaible to solve issues and Microverse for push us to work hard every day!
+> Give credit to everyone who inspired your codebase.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+- I would like to thank Microverse for this learning opportunity.
+
+- [Microverse team](https://microverse.org/)
 
 ## 📝 License <a name="license"></a>
 
