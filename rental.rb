@@ -1,6 +1,4 @@
-# Create a class Rental with the following:
-# @date instance variable, should be initialized in the constructor.
-# Setter and getter for @date (remember about attr_accessor).
+# Create a class Rental 
 require_relative 'book'
 require_relative 'person'
 class Rental
