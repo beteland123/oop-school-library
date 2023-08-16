@@ -26,7 +26,7 @@ puts capitalized_person.correct_name
 capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
 puts capitalized_trimmed_person.correct_name
 
-puts "======================================"
+puts '======================================'
 IOT = Classroom.new('IOT')
 student = Student.new(19, IOT, name: 'John')
 IOT.add_student(student)
@@ -54,4 +54,4 @@ b1.rental.map(&:date)
 puts "total rented book by person2: => #{person2.rental.count}"
 puts "List books title rented by person1 #{person1.rental.map { |rental| rental.book.title }}"
 
-puts "============================"
+puts '============================'
