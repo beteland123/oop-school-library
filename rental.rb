@@ -1,4 +1,4 @@
-# Create a class Rental 
+# Create a class Rental
 require_relative 'book'
 require_relative 'person'
 class Rental

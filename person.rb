@@ -34,5 +34,4 @@ class Person < Nameable
     rental = Rental.new(date, self, book)
     @rental << rental
   end
-
 end
