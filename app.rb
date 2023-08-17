@@ -13,12 +13,18 @@ class App
        @rental = []
     end
     def all_books
+     if @books.empty?
+        puts "No books avaliable"
+     else
         @books.each do |book|
           puts "Title: \"#{book.title}\", Author: #{book.author}" 
         end; nil
+    end
     end   
    def create_book(title,author)
     book = Book.new(title,author)
     @books << book
+    puts "Book created successfully"
+    puts
    end
 end
