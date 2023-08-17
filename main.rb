@@ -27,6 +27,41 @@ def create_book(app)
   app.create_book(title,author)
 end
 
+def add_studnet(app)
+  print "Age : "
+  age = gets().chomp()
+  print "Name : "
+  name = gets().chomp()
+  print "Classroom : "
+  room = gets().chomp()
+  print "Has parent permission? [Y/N] : "
+  permission = gets().chomp()
+  if permission == 'Y' || permission == 'y'
+    permission = true
+  elsif permission == 'N' || permission == 'n'
+    permission = false
+  else
+    puts "Invalid input "
+  end
+  app.add_student(room,age, name,permission)
+end
+
+
+
+def create_person(app)
+  print "Do you want to create a student (1) or a teacher (2)? [Input the number] : "
+     num = gets().chomp().to_i
+  if num == 1
+    add_studnet(app)
+  elsif num == 2
+    add_teacher(app)
+  else
+    puts "Invalid input "
+  end
+end
+
+
+
 
 def main
   app = App.new()
@@ -37,9 +72,9 @@ def main
     when "1"
        puts app.all_books()
     when "2" 
-       puts "Value was 2" 
+       puts app.all_people()
     when "3"
-       puts "Value was 3"
+       puts create_person(app)
     when "4"
       create_book(app)
     when "5" 
@@ -49,7 +84,7 @@ def main
     when "7"
       then break
     else
-      puts "Invalid number"
+      puts "Invalid input"
     end
   end
 end
