@@ -69,6 +69,17 @@ def create_person(app)
   end
 end
 
+def create_rent(app)
+  puts "Select a book from the following list by number"
+  app.all_books
+  book_num = gets().chomp().to_i
+  puts "Select a person from the following list by number (not id)"
+  app.all_people
+  person_num = gets().chomp().to_i
+  print "Date : "
+  date = gets().chomp()
+  app.add_rent(date,person_num, book_num)
+end
 
 
 
@@ -87,9 +98,9 @@ def main
     when "4"
       create_book(app)
     when "5" 
-      puts "Value was 5"  
+      puts create_rent(app)  
     when "6"
-      puts "Value was 6"
+      puts list_rent(app)
     when "7"
       then break
     else
