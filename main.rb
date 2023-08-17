@@ -1,57 +1,59 @@
-require_relative 'person'
-require_relative 'student'
-require_relative 'teacher'
-require_relative 'name'
-require_relative 'decorator'
-require_relative 'book'
-require_relative 'classroom'
-require_relative 'rental'
 
-person = Person.new(15, name: 'John', parent_permission: false)
-puts "person with out persmision can use services  #{person.can_use_services?}"
+require_relative 'app'
 
-person2 = Person.new(48, name: 'selam')
-puts "person with default persmision can use services  #{person2.can_use_services?}"
-
-student = Student.new(16, 'Math Class', name: 'Alice', parent_permission: true)
-puts student.play_hooky
-
-teacher = Teacher.new('computer science', 30, name: 'Mike', parent_permission: false)
-puts "Teacher with out persmision can use services  #{teacher.can_use_services?}"
-
-person = Person.new(22, name: 'maximilianus')
-person.correct_name
-capitalized_person = CapitalizeDecorator.new(person)
-puts capitalized_person.correct_name
-capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
-puts capitalized_trimmed_person.correct_name
-
-puts '======================================'
-IOT = Classroom.new('IOT')
-student = Student.new(19, IOT, name: 'John')
-IOT.add_student(student)
-student2 = Student.new(25, IOT, name: 'Nahom')
-IOT.add_student(student2)
-IOT.student.map do |s|
-  puts "students in IOT classrom : => #{s.name}"
+def welcome
+  puts "Welcome to School Library App !"
 end
 
-person1 = Person.new(25, name: 'Hilina')
-person2 = Person.new(30, name: 'Leykun')
-b1 = Book.new('The Internet of Things', 'Samuel Greengard')
-b2 = Book.new('Getting Started with the Internet of Things', 'Cuno Pfister')
-b3 = Book.new('Build Your Own Internet of Things Devices', 'Simon Monk ')
-b4 = Book.new('Internet of Things Projects with Raspberry Pi ', 'Simon Monk')
-b5 = Book.new('Internet of Things with JavaScript ', 'Nate Murray')
+def get_input
+  puts "Please choose an  option by enterin a number"
+  puts " 1 - List all books"
+  puts " 2 - List all people"
+  puts " 3 - Create a person"
+  puts " 4 - Create a book"
+  puts " 5 - Create a rental"
+  puts " 6 - List all renatals for a given person id"
+  puts " 7 - Exit"
 
-Rental.new('2017-12-22', person1, b1)
-Rental.new('2017-12-31', person2, b2)
-Rental.new('2017-11-11', person1, b3)
-Rental.new('2017-10-10', person1, b4)
-Rental.new('2017-10-10', person2, b5)
+input = gets().chomp()
+input
+end
 
-b1.rental.map(&:date)
-puts "total rented book by person2: => #{person2.rental.count}"
-puts "List books title rented by person1 #{person1.rental.map { |rental| rental.book.title }}"
+def create_book(app)
+  print "Title : "
+   title = gets().chomp()
+  print "Author : "
+  author = gets().chomp()
+  app.create_book(title,author)
+end
 
-puts '============================'
+
+def main
+  app = App.new()
+  welcome
+  loop do 
+    input = get_input()
+    case input
+    when "1"
+       puts app.all_books()
+    when "2" 
+       puts "Value was 2" 
+    when "3"
+       puts "Value was 3"
+    when "4"
+      create_book(app)
+    when "5" 
+      puts "Value was 5"  
+    when "6"
+      puts "Value was 6"
+    when "7"
+      then break
+    else
+      puts "Invalid number"
+    end
+  end
+end
+
+main()
+
+
