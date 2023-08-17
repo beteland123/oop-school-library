@@ -46,6 +46,15 @@ def add_studnet(app)
   app.add_student(room,age, name,permission)
 end
 
+def  add_teacher(app)
+  print "Age : "
+  age = gets().chomp()
+  print "Name : "
+  name = gets().chomp()
+  print "Specialization: "
+  special = gets().chomp()
+  app.add_teach(special,age,name)
+end
 
 
 def create_person(app)

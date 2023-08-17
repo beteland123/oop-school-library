@@ -43,5 +43,10 @@ class App
     @person << stud
     puts "Student created successfully"
    end
-   
+   def add_teach(special,age,name)
+    teach = Teacher.new(special,age,name: name)
+    teach.type = "Teacher"
+    @person << teach
+    puts "Teacher created successfully"
+   end
 end
