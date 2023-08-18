@@ -45,14 +45,14 @@ class App
   end
 
   def add_student(room, age, name, permission)
-    stud = Student.new(room, age, name:, parent_permission: permission)
+    stud = Student.new(room, age, name: name, parent_permission: permission)
     stud.type = 'Student'
     @person << stud
     puts 'Person created successfully'
   end
 
   def add_teach(special, age, name)
-    teach = Teacher.new(special, age, name:)
+    teach = Teacher.new(special, age, name: name)
     teach.type = 'Teacher'
     @person << teach
     puts 'Person created successfully'
