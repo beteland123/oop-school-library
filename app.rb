@@ -60,5 +60,24 @@ class App
     @rental << rent
     puts "Rent created successfully"
   end
+  def rent_list(id)
+   person = find_person_by_id(id)
+ 
+   if person
+     puts "Rentals :"
+ 
+     person.rental.each do |rental|
+       puts "Date: #{rental.date} , Book: \"#{rental.book.title}\" by #{rental.person.name} "
+     end; nil
+   else
+     puts "No person found with ID #{id}" 
+   end
+ end
+ 
+ def find_person_by_id(id)
+   @person.find { |p| p.id == id }
+ end
+ 
+ 
   
 end

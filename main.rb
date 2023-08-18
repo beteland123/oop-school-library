@@ -81,6 +81,12 @@ def create_rent(app)
   app.add_rent(date,person_num, book_num)
 end
 
+def list_rent(app)
+  puts "Id of person: "
+  id = gets.chomp.to_i
+  app.rent_list(id)
+  
+end
 
 
 def main
@@ -102,7 +108,8 @@ def main
     when "6"
       puts list_rent(app)
     when "7"
-      then break
+      puts "Thank you for using this app!"
+       break
     else
       puts "Invalid input"
     end
