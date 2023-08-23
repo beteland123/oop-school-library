@@ -104,7 +104,7 @@ class App
 
       person_rentals.each do |rental|
         puts " Date: #{rental['date']}, Book: #{rental['book']} by #{rental['person']}"
-      end
+      end; nil
     else
       puts "No person found with ID #{id}"
     end
