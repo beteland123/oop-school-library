@@ -74,10 +74,20 @@ class App
   end
 
   def add_rent(date, person_index, book_index)
-    person = @person[person_index - 1]
-    book = @books[book_index - 1]
-    rent = Rental.new(date, person, book)
-    @rental << rent
+    books = read_file('book.json')
+    people = read_file('person.json')
+    person_hash = people[person_index - 1]
+    book_hash = books[book_index - 1]
+    person = Person.new(person_hash['Age'], name: person_hash['Name'],
+                                            parent_permission: person_hash['Parent_permission'])
+    book = Book.new(book_hash['Title'], book_hash['Author'])
+    rental = Rental.new(date, person, book)
+    rentals = {
+      'date' => rental.date,
+      'person' => rental.person.name,
+      'book' => rental.book.title
+    }
+    write_file('rentals.json', rentals)
     puts 'Rent created successfully'
   end
 
@@ -87,16 +97,22 @@ class App
     if person
       puts 'Rentals :'
 
-      person.rental.each do |rental|
-        puts "Date: #{rental.date} , Book: \"#{rental.book.title}\" by #{rental.person.name} "
-      end; nil
+      rentals = read_file('rentals.json')
+      person_rentals = rentals.select do |rental|
+        rental['person'] == person['Name']
+      end
+
+      person_rentals.each do |rental|
+        puts " Date: #{rental['date']}, Book: #{rental['book']} by #{rental['person']}"
+      end
     else
       puts "No person found with ID #{id}"
     end
   end
 
   def find_person_by_id(id)
-    @person.find { |p| p.id == id }
+    people = read_file('person.json')
+    people.find { |p| p['id'] == id }
   end
 
   def write_file(fil_name, new_data_item)
