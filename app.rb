@@ -1,24 +1,20 @@
+require 'json'
 require_relative 'person'
 require_relative 'student'
 require_relative 'teacher'
-require_relative 'name'
-require_relative 'decorator'
 require_relative 'book'
 require_relative 'classroom'
 require_relative 'rental'
 class App
-  def initialize
-    @books = []
-    @person = []
-    @rental = []
-  end
+  attr_accessor :book, :people, :rental
 
   def all_books
     book_counter = 1
-    if @books.empty?
+    data = read_file('book.json')
+    if data.empty?
       puts 'No books avaliable'
     else
-      @books.each do |book|
+      data.each do |book|
         puts "#{book_counter}. Title: \"#{book.title}\", Author: #{book.author}"
         book_counter += 1
       end; nil
@@ -27,6 +23,7 @@ class App
 
   def all_people
     person_counter = 1
+
     if @person.empty?
       puts 'No person avaliable'
     else
@@ -38,21 +35,25 @@ class App
   end
 
   def create_book(title, author)
-    book = Book.new(title, author)
-    @books << book
+    Book.new(title, author)
+    book_data = {
+      'Title' => title,
+      'Author' => author
+    }
+    write_file('book.json', book_data)
     puts 'Book created successfully'
     puts
   end
 
   def add_student(room, age, name, permission)
-    stud = Student.new(room, age, name: name, parent_permission: permission)
+    stud = Student.new(room, age, name:, parent_permission: permission)
     stud.type = 'Student'
     @person << stud
     puts 'Person created successfully'
   end
 
   def add_teach(special, age, name)
-    teach = Teacher.new(special, age, name: name)
+    teach = Teacher.new(special, age, name:)
     teach.type = 'Teacher'
     @person << teach
     puts 'Person created successfully'
@@ -82,5 +83,26 @@ class App
 
   def find_person_by_id(id)
     @person.find { |p| p.id == id }
+  end
+
+  def write_file(fil_name, new_data_item)
+    data = read_file(fil_name)
+    data << new_data_item if data
+
+    begin
+      File.write(fil_name, data.to_json)
+    rescue StandardError => e
+      puts "Error writing file: #{e}"
+    end
+  end
+
+  def read_file(filename)
+    unless File.exist?(filename)
+      File.open(filename, 'a')
+      return []
+    end
+
+    data = File.read(filename)
+    JSON.parse(data) unless data.empty?
   end
 end
