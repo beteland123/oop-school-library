@@ -1,6 +1,6 @@
 require_relative 'handler'
 def main
-  handle = Handle_menu.new
+  handle = HandleMenu.new
   handle.welcome
   loop do
     input = handle.option

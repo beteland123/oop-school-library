@@ -127,6 +127,11 @@ To run tests, run the following command:
 - Twitter: [@betelandarge](https://twitter.com/BetelAndarge)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/betelandarge)
 
+👤 **Sebastián Hernández**
+
+- GitHub: [@shm04](https://github.com/shm04)
+- LinkedIn: [Sebastian Hernandez](https://www.linkedin.com/in/sebastian-hernandez-munoz/)
+
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
