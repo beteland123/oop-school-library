@@ -15,7 +15,7 @@ class App
       puts 'No books avaliable'
     else
       data.each do |book|
-        puts "#{book_counter}. Title: \"#{book.title}\", Author: #{book.author}"
+        puts "#{book_counter}. Title: \"#{book["Title"]}\", Author: #{book["Author"]}"
         book_counter += 1
       end; nil
     end
