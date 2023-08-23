@@ -63,7 +63,13 @@ class App
   def add_teach(special, age, name)
     teach = Teacher.new(special, age, name: name)
     teach.type = 'Teacher'
-    @person << teach
+    teacher_data = {
+      'Age' => teach.age,
+      'Name' => teach.name,
+      'Type' => teach.type,
+      'id' => teach.id
+    }
+    write_file('person.json', teacher_data)
     puts 'Person created successfully'
   end
 
