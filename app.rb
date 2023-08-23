@@ -15,7 +15,7 @@ class App
       puts 'No books avaliable'
     else
       data.each do |book|
-        puts "#{book_counter}. Title: \"#{book["Title"]}\", Author: #{book["Author"]}"
+        puts "#{book_counter}. Title: \"#{book['Title']}\", Author: #{book['Author']}"
         book_counter += 1
       end; nil
     end
@@ -23,12 +23,12 @@ class App
 
   def all_people
     person_counter = 1
-
-    if @person.empty?
+    data = read_file('person.json')
+    if data.empty?
       puts 'No person avaliable'
     else
-      @person.each do |p|
-        puts "#{person_counter}. [#{p.type}]  Name: #{p.name}, ID : #{p.id} , Age: #{p.age}"
+      data.each do |p|
+        puts "#{person_counter}. [#{p['Type']}]  Name: #{p['Name']}, ID : #{p['id']} , Age: #{p['Age']}"
         person_counter += 1
       end; nil
     end
@@ -46,14 +46,22 @@ class App
   end
 
   def add_student(room, age, name, permission)
-    stud = Student.new(room, age, name:, parent_permission: permission)
+    stud = Student.new(room, age, name: name, parent_permission: permission)
     stud.type = 'Student'
-    @person << stud
+    student_data = {
+      'Classroom' => stud.classroom,
+      'Age' => stud.age,
+      'Name' => stud.name,
+      'Parent_permission' => stud.parent_permission,
+      'Type' => stud.type,
+      'id' => stud.id
+    }
+    write_file('person.json', student_data)
     puts 'Person created successfully'
   end
 
   def add_teach(special, age, name)
-    teach = Teacher.new(special, age, name:)
+    teach = Teacher.new(special, age, name: name)
     teach.type = 'Teacher'
     @person << teach
     puts 'Person created successfully'
