@@ -57,4 +57,32 @@ describe Person do
       @person.can_use_services?.should be_truthy
     end
   end
+  def test_add_rental
+    rental_double = instance_double(Rental)
+    allow(Rental).to receive(:new).and_return(rental_double)
+
+    @person.add_rental(rental)
+
+    assert_equal 1, @person.rentals.length
+    assert_includes @person.rentals, rental
+
+    # additional validation
+    assert_equal rental.date, @person.rentals.first.date
+  end
+  describe '#of_ages?' do
+    it 'returns true when age is 18 or older' do
+      @person.age = @person.age.to_i
+      expect(@person.send(:of_age?)).to be(true)
+    end
+
+    it 'returns false when age is under 18' do
+      @person2.age = @person2.age.to_i
+      expect(@person2.send(:of_age?)).to be(false)
+    end
+  end
+  describe 'correct name' do
+    it 'returns correct name' do
+      expect(@person2.correct_name).to eq('Betty')
+    end
+  end
 end
