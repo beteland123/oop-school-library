@@ -66,6 +66,8 @@ And all of this will be built in a beautiful and well-organized way!
 - [] **[Add new class to captilize and trim name]**
 - [ ] **set up associations**
 - [ ] **add basic UI**
+- [ ] **preserve data**
+- [ ] **unit tests**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -138,8 +140,7 @@ To run tests, run the following command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **preserve data**
-- [ ] **unit tests**
+- [ ] **integrate with database**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
